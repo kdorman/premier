@@ -856,7 +856,7 @@ int make_options(options **opt, int argc, char **argv)
 		popt->auto_penalty_eta = 1;
 	}
 
-	if ((popt->mode | 1L) && popt->ground_truth_file == NULL) {
+	if ((popt->mode & 1) && popt->ground_truth_file == NULL) {
 		message(stderr, __FILE__, __LINE__, ERROR_MSG, 
 				INVALID_CMD_ARGUMENT, 
 				"you must specify --ground-truth-file under 'oracle' mode.\n");
